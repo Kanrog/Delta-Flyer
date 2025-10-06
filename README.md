@@ -1,4 +1,4 @@
-# 🚀 Delta Flyer Refit
+# Delta Flyer Refit
 *Where engineering meets the final frontier of 3D printing!*
 
 ![Delta Flyer Refit 3D Printer](Delta_Flyer_Refit_Full_Assembly_11.png)
@@ -11,20 +11,22 @@ Boldly print where no filament has gone before! This isn't just any 3D printer �
 
 Below you'll find all the essential configuration files to get your freshly-built Delta Flyer operational and printing at maximum efficiency. Each file has been carefully calibrated and tested – no red alerts here, just smooth sailing through the cosmos of creation!
 
-## 📁 Configuration Files
+## Configuration Files
 
-### ⚙️ `Rolohaun Delta Flyer Refit - 0.4mm Nozzle.orca_printer`
+### `Rolohaun Delta Flyer Refit - 0.4mm Nozzle.orca_printer`
 Your OrcaSlicer profile, pre-configured with all the optimal settings. the newest orcaslicer version comes with this pre-installed, so this can be considered a backup.
 
-### 🖥️ `printer.cfg`
+### `printer.cfg`
 The Klipper configuration file – the brain of your Delta Flyer. Upload this to get your printer's systems online.
 
-### 🛏️ `Delta_Flyer_Buildplate_150.stl`
+### `Delta_Flyer_Buildplate_150.stl`
 A precise 3D model of your build plate for perfect slicer visualization. No more guessing where your prints will land!
 
-### 🎨 `Delta_Flyer_Logo.png`
+### `Delta_Flyer_Logo.png`
 A sleek texture for your build plate in the slicer. Because even functional can be beautiful!
 
+### `bigtreetech-beta.github.io.pdf`
+Backup of the BigTreeTech DZ01 mainboard manual saved as a PDF for ease of use.
 ---
 
-*Ready to engage? Download these files and prepare for printing at warp speed!* 🌟
+*Ready to engage? Download these files and prepare for printing at warp speed!* 
