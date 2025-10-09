@@ -1,38 +1,91 @@
-# Delta Flyer Refit
-*Where engineering meets the final frontier of 3D printing!*
+# Delta Flyer Refit Website
 
-![Delta Flyer Refit 3D Printer](Delta_Flyer_Refit_Full_Assembly_11.png)
+This is the website for the Delta Flyer Refit 3D printer project, designed by Rolohaun and Kanrog, with a building kit by LDO.
 
-## 🔧 [Build Your Own Delta Flyer on Printables!](https://www.printables.com/model/1327596-delta-flyer-refit-3d-printer)
+## Deployment to GitHub Pages
 
-Boldly print where no filament has gone before! This isn't just any 3D printer – it's the **Delta Flyer Refit**, a marvel of modern engineering that would make even Starfleet engineers jealous. Whether you're replicating spare parts for your own starship or just printing the perfect coffee cup, this delta-configuration beauty is ready for warp-speed printing.
+To deploy this website to `https://kanrog.github.io/Flyer`, follow these steps:
 
-> **🛠️ Ready to Build?** Head over to Rolohauns [Printables page](https://www.printables.com/model/1327596-delta-flyer-refit-3d-printer) for the STL files, and assembly instructions(coming soon). Then come back here for the essential configuration files to get your Delta Flyer operational!
+### Option 1: Using GitHub Web Interface
 
-Below you'll find all the essential configuration files to get your freshly-built Delta Flyer operational and printing at maximum efficiency. Each file has been carefully calibrated and tested – no red alerts here, just smooth sailing through the cosmos of creation!
+1. Go to your GitHub repository: `https://github.com/Kanrog/Delta-Flyer-Refit`
+2. Create a new branch called `gh-pages`
+3. Upload all files from this `Flyer` folder to the `gh-pages` branch
+4. Go to Settings > Pages
+5. Under "Source", select the `gh-pages` branch
+6. Save the settings
+7. Your site will be available at `https://kanrog.github.io/Flyer`
 
-## Configuration Files
+### Option 2: Using Git Command Line
 
-### `Rolohaun Delta Flyer Refit - 0.4mm Nozzle.orca_printer`
-Your OrcaSlicer profile, pre-configured with all the optimal settings. the newest orcaslicer version comes with this pre-installed, so this can be considered a backup.
+```bash
+# Navigate to your Delta-Flyer-Refit repository
+cd Delta-Flyer-Refit
 
-### `printer.cfg`
-The Klipper configuration file – the brain of your Delta Flyer. Upload this to get your printer's systems online.
+# Create and switch to gh-pages branch
+git checkout --orphan gh-pages
 
-### `Delta Flyer Refit Wiring Diagram.pdf`
-A simple wiring diagram for when you are ready to connect all the wires to the DZ01
+# Remove all existing files
+git rm -rf .
 
-### `LDO_DZ01 Delta Flyer klipper tutorial Public.pdf`
-A complete guide to setting up all software of the Flyer and getting ready to do the first print. 
+# Copy all files from the Flyer folder
+cp -r /path/to/Flyer/* .
 
-### `Delta_Flyer_Buildplate_150.stl`
-A precise 3D model of your build plate for perfect slicer visualization. No more guessing where your prints will land!
+# Add all files
+git add .
 
-### `Delta_Flyer_Logo.png`
-A sleek texture for your build plate in the slicer. Because even functional can be beautiful!
+# Commit
+git commit -m "Deploy Delta Flyer Refit website"
 
-### `bigtreetech-beta.github.io.pdf`
-Backup of the BigTreeTech DZ01 mainboard manual saved as a PDF for ease of use.
----
+# Push to GitHub
+git push origin gh-pages
 
-*Ready to engage? Download these files and prepare for printing at warp speed!* 
+# Enable GitHub Pages in repository settings
+# Go to Settings > Pages > Source > Select gh-pages branch
+```
+
+### Option 3: Create a New Repository
+
+1. Create a new repository called `Flyer` on GitHub
+2. Upload all files from this folder
+3. Enable GitHub Pages in Settings > Pages
+4. Select the main branch as source
+5. Your site will be available at `https://kanrog.github.io/Flyer`
+
+## File Structure
+
+```
+Flyer/
+├── index.html              # Main HTML file
+├── style.css               # Stylesheet with green, blue, and purple theme
+├── assets/
+│   ├── images/            # All logos and images
+│   │   ├── LDO.PNG
+│   │   ├── rolohaun.png
+│   │   ├── Kanrog_LOGO_wtext.png
+│   │   ├── Delta_Flyer_Logo.png
+│   │   └── Delta_Flyer_Refit_Full_Assembly_11.png
+│   └── pdfs/              # All PDF documents
+│       ├── Delta_Flyer_Refit_Wiring_Diagram.pdf
+│       ├── LDO_DZ01_Delta_Flyer_klipper_tutorial_Public.pdf
+│       └── bigtreetech-beta.github.io.pdf
+└── README.md              # This file
+```
+
+## Features
+
+- **Responsive Design**: Works on all devices
+- **Color Scheme**: Green (#3f7268), Blue (#446696), and Purple (#9b59b6)
+- **Logo Hierarchy**: LDO logo at top, Rolohaun and Kanrog logos below
+- **Interactive Elements**: All images and PDFs are clickable and open in new tabs
+- **Modern Styling**: Gradient effects, hover animations, and smooth transitions
+
+## Credits
+
+- **Design**: Rolohaun & Kanrog
+- **Kit Manufacturer**: LDO
+- **Website Template**: Based on Kanrog Creations website
+
+## License
+
+All content related to the Delta Flyer Refit project is subject to the original project's licensing terms.
