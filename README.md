@@ -22,6 +22,9 @@ The Klipper configuration file – the brain of your Delta Flyer. Upload this to
 ### `Delta Flyer Refit Wiring Diagram.pdf`
 A simple wiring diagram for when you are ready to connect all the wires to the DZ01
 
+### `LDO_DZ01 Delta Flyer klipper tutorial Public.pdf`
+A complete guide to setting up all software of the Flyer and getting ready to do the first print. 
+
 ### `Delta_Flyer_Buildplate_150.stl`
 A precise 3D model of your build plate for perfect slicer visualization. No more guessing where your prints will land!
 
