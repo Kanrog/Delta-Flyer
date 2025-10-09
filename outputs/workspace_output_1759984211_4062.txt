@@ -1,0 +1,6 @@
+total 68
+drwxr-xr-x 2 root root   139 Oct  9 04:30 .
+drwxr-xr-x 5 root root    63 Oct  9 04:30 ..
+-rw-r--r-- 1 root root 29684 Oct  9 04:30 Delta_Flyer_Buildplate_150.stl
+-rw-r--r-- 1 root root  8855 Oct  9 04:30 Rolohaun_Delta_Flyer_Refit_0.4mm_Nozzle.orca_printer
+-rw-r--r-- 1 root root 23875 Oct  9 04:30 printer.cfg

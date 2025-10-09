@@ -1,0 +1,8 @@
+total 1464
+drwxr-xr-x 2 root root    144 Oct  9 04:26 .
+drwxr-xr-x 4 root root     44 Oct  9 04:25 ..
+-rw-r--r-- 1 root root 763241 Oct  9 04:26 Delta_Flyer_Logo.png
+-rw-r--r-- 1 root root 469321 Oct  9 04:26 Delta_Flyer_Refit_Full_Assembly_11.png
+-rw-r--r-- 1 root root 225700 Oct  9 04:25 Kanrog_LOGO_wtext.png
+-rw-r--r-- 1 root root   5887 Oct  9 04:25 LDO.PNG
+-rw-r--r-- 1 root root  20985 Oct  9 04:25 rolohaun.png
