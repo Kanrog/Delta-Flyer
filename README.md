@@ -19,6 +19,9 @@ Your OrcaSlicer profile, pre-configured with all the optimal settings. the newes
 ### `printer.cfg`
 The Klipper configuration file – the brain of your Delta Flyer. Upload this to get your printer's systems online.
 
+### `Delta Flyer Refit Wiring Diagram.pdf`
+A simple wiring diagram for when you are ready to connect all the wires to the DZ01
+
 ### `Delta_Flyer_Buildplate_150.stl`
 A precise 3D model of your build plate for perfect slicer visualization. No more guessing where your prints will land!
 
