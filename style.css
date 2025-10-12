@@ -725,4 +725,31 @@ footer {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+}/* Add bordered boxes around sections - matching main Kanrog site style */
+
+.downloads,
+.gallery,
+.external-links {
+    background: var(--medium-gray);
+    border: 2px solid var(--primary-green);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(63, 114, 104, 0.3);
+}
+
+/* Adjust section headings inside boxes */
+.downloads h2,
+.gallery h2,
+.external-links h2 {
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .downloads,
+    .gallery,
+    .external-links {
+        padding: 20px;
+    }
 }
