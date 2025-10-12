@@ -43,13 +43,13 @@ body {
 /* Header Styles */
 header {
     text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 40px;
+    padding: 20px 20px 10px 20px;
+    margin-bottom: 20px;
 }
 
 .header-content {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .logos-top {
@@ -70,12 +70,12 @@ header {
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     animation: fadeInDown 1.2s ease-out;
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .logo {
