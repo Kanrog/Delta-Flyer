@@ -5,15 +5,15 @@
 }
 
 :root {
+    --primary-purple: #9b59b6;
+    --dark-purple: #7d3c98;
+    --light-purple: #bb8fce;
     --primary-green: #3f7268;
     --dark-green: #2d5249;
     --light-green: #5a9d8a;
     --primary-blue: #446696;
     --dark-blue: #2f4a6d;
     --light-blue: #5d84b8;
-    --primary-purple: #9b59b6;
-    --dark-purple: #7d3c98;
-    --light-purple: #bb8fce;
     --black: #0a0a0a;
     --dark-gray: #1a1a1a;
     --medium-gray: #2a2a2a;
@@ -40,21 +40,19 @@ body {
     padding: 20px;
 }
 
-/* Header Styles */
 header {
     text-align: center;
     padding: 40px 20px;
     margin-bottom: 40px;
 }
 
-.header-content {
-    text-align: center;
-    padding: 20px;
-}
-
-.logos-top {
-    margin-bottom: 20px;
+.logo-container {
+    margin-bottom: 30px;
     animation: fadeInDown 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo-top {
@@ -64,18 +62,12 @@ header {
     transition: transform 0.3s ease;
 }
 
-.logos-bottom {
+.logo-container-secondary {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
-    animation: fadeInDown 1.2s ease-out;
-}
-
-.logo-container {
-    margin-bottom: 20px;
 }
 
 .logo {
@@ -107,51 +99,11 @@ h1 {
     animation: fadeInUp 1.2s ease-out;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    margin-bottom: 60px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.cta-container {
-    margin-top: 30px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 15px 40px;
-    background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(63, 114, 104, 0.3);
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(63, 114, 104, 0.5);
-}
-
-.cta-button .icon {
-    margin-right: 10px;
-}
-
-/* Section Styles - MAIN FIX FOR BOXES */
-.about,
-.downloads,
-.gallery,
-.external-links {
+.links-section,
+.resources-section {
     background: var(--medium-gray);
-    border: 2px solid var(--primary-green);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple)) 1;
     border-radius: 15px;
     padding: 30px;
     margin-bottom: 30px;
@@ -159,11 +111,12 @@ h1 {
     animation: fadeIn 1.5s ease-out;
 }
 
-.about h2,
-.downloads h2,
-.gallery h2,
-.external-links h2 {
-    color: var(--light-green);
+.links-section h2,
+.resources-section h2 {
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 2rem;
     margin-bottom: 25px;
     text-align: center;
@@ -171,157 +124,155 @@ h1 {
     letter-spacing: 2px;
 }
 
-.about h2 .icon,
-.downloads h2 .icon,
-.gallery h2 .icon,
-.external-links h2 .icon {
-    margin-right: 10px;
+.about-section {
+    background: var(--medium-gray);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple)) 1;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(68, 102, 150, 0.3);
+    animation: fadeIn 1.5s ease-out;
 }
 
-/* About Section */
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.about-text p {
+.about-section h2 {
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2rem;
     margin-bottom: 20px;
-}
-
-.about-text a {
-    color: var(--light-blue);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.about-text a:hover {
-    color: var(--primary-blue);
-}
-
-.about-image {
     text-align: center;
 }
 
-.hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid var(--primary-purple);
-    box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--white);
+    margin-bottom: 15px;
 }
 
-/* Download Grid */
-.download-grid {
+.about-section a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.about-section a:hover {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    display: block;
+    border-radius: 15px;
+    border: 3px solid;
+    border-image: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple)) 1;
+    box-shadow: 0 0 40px rgba(63, 114, 104, 0.4);
+    animation: fadeIn 2s ease-out;
+}
+
+.resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 25px;
+    margin-top: 20px;
 }
 
-.download-card {
+.resource-card {
     background: var(--dark-gray);
     border: 2px solid var(--border-color);
     border-radius: 10px;
     padding: 25px;
-    text-align: center;
     text-decoration: none;
     color: var(--white);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
     position: relative;
     overflow: hidden;
 }
 
-.download-card::before {
+.resource-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(63, 114, 104, 0.1), rgba(68, 102, 150, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: linear-gradient(90deg, transparent, rgba(63, 114, 104, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
-.download-card:hover::before {
-    opacity: 1;
+.resource-card:hover::before {
+    left: 100%;
 }
 
-.download-card:hover {
+.resource-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-green);
-    box-shadow: 0 10px 30px rgba(63, 114, 104, 0.3);
+    box-shadow: 0 10px 30px rgba(63, 114, 104, 0.4);
 }
 
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.download-card h3 {
+.resource-card h3 {
+    color: var(--primary-green);
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resource-card h3 i {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+}
+
+.resource-card p {
     color: var(--light-green);
-    position: relative;
-    z-index: 1;
-}
-
-.download-card p {
-    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 15px;
-    color: var(--white);
-    position: relative;
-    z-index: 1;
 }
 
-.file-type {
+.resource-card .file-type {
     display: inline-block;
     padding: 5px 15px;
-    background: var(--primary-green);
-    color: var(--white);
+    background: var(--primary-purple);
     border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: bold;
-    margin-top: 10px;
-    position: relative;
-    z-index: 1;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-/* Gallery Grid */
-.gallery-grid {
+.image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 .gallery-item {
-    display: block;
-    border-radius: 10px;
+    position: relative;
     overflow: hidden;
+    border-radius: 10px;
     border: 2px solid var(--border-color);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
-    border-color: var(--primary-purple);
-    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.5);
+    border-color: var(--primary-blue);
+    box-shadow: 0 10px 30px rgba(68, 102, 150, 0.4);
+    transform: translateY(-5px);
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 250px;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -329,11 +280,11 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Links Grid */
 .links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 .link-card {
@@ -348,6 +299,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
     position: relative;
     overflow: hidden;
 }
@@ -356,49 +308,64 @@ h1 {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(63, 114, 104, 0.1), rgba(68, 102, 150, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: linear-gradient(90deg, transparent, rgba(68, 102, 150, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .link-card:hover::before {
-    opacity: 1;
+    left: 100%;
 }
 
 .link-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-blue);
-    box-shadow: 0 10px 30px rgba(68, 102, 150, 0.3);
+    box-shadow: 0 10px 30px rgba(68, 102, 150, 0.4);
 }
 
-.link-icon {
+.link-card i {
     font-size: 3rem;
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 1;
+    color: var(--primary-blue);
+    transition: all 0.3s ease;
 }
 
-.link-card h3 {
-    font-size: 1.2rem;
+.link-card:hover i {
+    transform: scale(1.2);
     color: var(--light-blue);
-    position: relative;
-    z-index: 1;
 }
 
-/* Footer */
+.link-card span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.printables:hover {
+    border-color: #FF6B35;
+}
+
+.printables:hover i {
+    color: #FF6B35;
+}
+
+.github:hover {
+    border-color: #333;
+}
+
+.github:hover i {
+    color: #333;
+}
+
 footer {
     text-align: center;
-    padding: 40px 20px;
-    border-top: 2px solid var(--border-color);
-    color: var(--white);
-    opacity: 0.8;
-    margin-top: 60px;
+    padding: 30px 20px;
+    color: var(--light-green);
+    border-top: 2px solid;
+    border-image: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple)) 1;
+    margin-top: 40px;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -408,21 +375,10 @@ footer {
     }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     to {
         opacity: 1;
@@ -430,42 +386,40 @@ footer {
     }
 }
 
-/* Responsive Design */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
     h1 {
         font-size: 2rem;
     }
-    
-    .logos-bottom {
-        flex-direction: column;
-        gap: 20px;
+
+    .tagline {
+        font-size: 1rem;
     }
-    
-    .download-grid {
+
+    .logo,
+    .logo-top {
+        max-width: 150px;
+    }
+
+    .resources-grid,
+    .links-grid,
+    .image-gallery {
         grid-template-columns: 1fr;
     }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .links-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .about,
-    .downloads,
-    .gallery,
-    .external-links {
-        padding: 20px;
+
+    .links-section h2,
+    .resources-section h2 {
+        font-size: 1.5rem;
     }
 }
 
@@ -473,24 +427,21 @@ footer {
     .container {
         padding: 10px;
     }
-    
-    .about,
-    .downloads,
-    .gallery,
-    .external-links {
-        padding: 15px;
+
+    .links-section,
+    .resources-section {
+        padding: 20px;
     }
-    
+
     h1 {
         font-size: 1.5rem;
     }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .download-card,
+
     .link-card {
         padding: 20px;
+    }
+
+    .link-card i {
+        font-size: 2.5rem;
     }
 }
