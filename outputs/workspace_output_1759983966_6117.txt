@@ -1,6 +1,0 @@
-total 3288
-drwxr-xr-x 2 root root     144 Oct  9 04:26 .
-drwxr-xr-x 4 root root      44 Oct  9 04:25 ..
--rw-r--r-- 1 root root  444151 Oct  9 04:26 Delta_Flyer_Refit_Wiring_Diagram.pdf
--rw-r--r-- 1 root root  194451 Oct  9 04:26 LDO_DZ01_Delta_Flyer_klipper_tutorial_Public.pdf
--rw-r--r-- 1 root root 2721502 Oct  9 04:26 bigtreetech-beta.github.io.pdf
