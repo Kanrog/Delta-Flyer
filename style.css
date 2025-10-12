@@ -456,4 +456,273 @@ footer {
     .link-card i {
         font-size: 2.5rem;
     }
+}/* Additional styles for Delta Flyer website */
+/* Add these to your existing style.css file */
+
+/* Header Styles */
+.header-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.logos-top {
+    margin-bottom: 20px;
+}
+
+.logos-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-blue), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.cta-container {
+    margin-top: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(63, 114, 104, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(63, 114, 104, 0.5);
+}
+
+.cta-button .icon {
+    margin-right: 10px;
+}
+
+/* About Section */
+.about {
+    margin-bottom: 60px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--light-green);
+}
+
+.about h2 .icon {
+    margin-right: 15px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text a {
+    color: var(--light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-text a:hover {
+    color: var(--primary-blue);
+}
+
+.about-image {
+    text-align: center;
+}
+
+/* Downloads Section */
+.downloads {
+    margin-bottom: 60px;
+}
+
+.downloads h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--light-blue);
+}
+
+.downloads h2 .icon {
+    margin-right: 15px;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.download-card {
+    background: var(--dark-gray);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 30px;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(63, 114, 104, 0.1), rgba(68, 102, 150, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.download-card:hover::before {
+    opacity: 1;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-green);
+    box-shadow: 0 10px 30px rgba(63, 114, 104, 0.3);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.download-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--light-green);
+}
+
+.download-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.file-type {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--primary-green);
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Gallery Section */
+.gallery {
+    margin-bottom: 60px;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--light-purple);
+}
+
+.gallery h2 .icon {
+    margin-right: 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* External Links Section */
+.external-links {
+    margin-bottom: 60px;
+}
+
+.external-links h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--light-blue);
+}
+
+.external-links h2 .icon {
+    margin-right: 15px;
+}
+
+.link-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid var(--border-color);
+    color: var(--white);
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .logos-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .download-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }
