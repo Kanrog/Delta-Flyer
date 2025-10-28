@@ -494,3 +494,8 @@ footer {
         padding: 20px;
     }
 }
+
+.highlight {
+    background-color: purple;
+    /* or any other styling you want */
+}
