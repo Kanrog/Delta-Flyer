@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Manual - LDO Rolohaun Delta Flyer</title>
+    <link rel="stylesheet" href="assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Main Page</a>
+            <div class="nav-title">Delta Flyer Build Manual</div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>LDO Rolohaun Delta Flyer</h1>
+            <div class="subtitle">Complete Build Manual</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Content Section -->
+        <section class="content-section">
+            <h2 class="section-title">Build Steps</h2>
+
+            <!-- CHAPTER 1 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Prepare Arms and Printed Parts</div>
+                    <div class="step-subtitle">Assembling the delta arms and removing supports</div>
+                </div>
+                <div class="step-content">
+                    <p>Glue the arms together using the M3x30 threaded rods. Keep the joints oriented identically on each end.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/arms-assembly.png" alt="Delta arms assembly" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Prepare all printed parts by removing all the built-in supports from:</p>
+                    <ul>
+                        <li>Top_Frame(middle)</li>
+                        <li>Top_Frame_A and B</li>
+                        <li>Top_Frame_C</li>
+                        <li>Carriage</li>
+                    </ul>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Important</h4>
+                        <p>Ensure all support material is completely removed before assembly to prevent fitment issues.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 2 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Install Headsets</div>
+                    <div class="step-subtitle">Installing bearing headsets into frame components</div>
+                </div>
+                <div class="step-content">
+                    <p>Insert headsets into the following pieces:</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/headset-installation.png" alt="Headset installation locations" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <ul>
+                        <li>Updated_Top_Frame_A.stl</li>
+                        <li>Updated_Top_Frame_B.stl</li>
+                        <li>Updated_Top_Frame_C.stl</li>
+                        <li>Updated_Bottom_Frame_A.stl</li>
+                        <li>Updated_Bottom_Frame_B.stl</li>
+                        <li>Updated_Bottom_Frame_C.stl</li>
+                        <li>Updated_Top_Frame_Middle.stl</li>
+                        <li>2 x Updated_Top_Frame_side_with_support.stl</li>
+                        <li>2 x Updated_Bottom_Middle.stl</li>
+                        <li>Updated_Bottom_Frame_Center.stl</li>
+                        <li>Effector.stl</li>
+                        <li>TR6_Hotend_Mount_LDO.stl</li>
+                        <li>3 x Tensioner.stl</li>
+                        <li>Top_Cover_A.stl</li>
+                        <li>Top_Cover_B.stl</li>
+                        <li>Top_Cover_C.stl</li>
+                        <li>Handle.stl</li>
+                        <li>2 x Hinge.stl</li>
+                    </ul>
+
+                    <div class="info-block">
+                        <h4>ℹ️ Tip</h4>
+                        <p>Press headsets in firmly and ensure they are seated flush with the printed part surface.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 3 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Assemble Bottom Frame Corners</div>
+                    <div class="step-subtitle">Installing motors, bearings, and pulleys</div>
+                </div>
+                <div class="step-content">
+                    <p>Start by assembling each upright corner.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/bottom-corner-assembly.png" alt="Bottom corner assembly" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Insert the F695 bearings into the lower frame corners. Put the GT2 pulley on the motor with the setscrew facing towards the motor. Attach the motor to the frame corner using 4x M3x30 screws.</p>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Important</h4>
+                        <p>Ensure the pulley setscrew is positioned towards the motor for proper belt alignment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 4 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Assemble Top Frame Corners</div>
+                    <div class="step-subtitle">Installing idlers and endstops</div>
+                </div>
+                <div class="step-content">
+                    <p>On the top frame corners, attach the GT2 idler with a M5x16 screw.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/top-corner-assembly.png" alt="Top corner assembly" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Then attach the optical endstop with the black protrusion facing toward the M5 screw head using 2x M3x12 screws.</p>
+
+                    <div class="info-block">
+                        <h4>ℹ️ Note</h4>
+                        <p>The endstop orientation is critical for proper homing functionality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 5 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Attach Extrusions and Rails</div>
+                    <div class="step-subtitle">Mounting 2020 extrusions and MGN9 rails</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the 2020 extrusion to the top frame corner using 4x M5x10 screws and T-nuts.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/extrusion-rail-assembly.png" alt="Extrusion and rail installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Then attach the MGN9 rail using 5x M3x8 screws and T-nuts.</p>
+
+                    <p>Finally, attach the bottom corner piece to the extrusion using 4x M5x10 screws and T-nuts.</p>
+                </div>
+            </div>
+
+            <!-- CHAPTER 6 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">6</div>
+                    <div class="step-title">Install Panel Covers</div>
+                    <div class="step-subtitle">Attaching corner panel pieces</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the 4 corner panel pieces to each upright, but do not attach the two front corner panels on the "B" corner - these are attached later after the door hinges.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/panel-covers.png" alt="Panel cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <div class="info-block">
+                        <h4>ℹ️ Note</h4>
+                        <p>The front lower panel cover on the "A" upright has a hole for a magnet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 7 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">7</div>
+                    <div class="step-title">Install Carriages and Belt System</div>
+                    <div class="step-subtitle">Mounting carriages and routing belts</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the carriages to the MGN9 rails using 3x M3x6 screws.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/belt-routing.png" alt="Belt routing diagram" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Using the Apex clips, fasten the belt to the tensioner. Put the tensioner into the carriage (apex clip down) and route the belt down around the pulley, back up through the carriage, around the top idler and back into the carriage, attached with another apex clip.</p>
+
+                    <p>Use a M3x30 screw to tension the belt to the carriage.</p>
+
+                    <div class="success-block">
+                        <h4>💡 Tip</h4>
+                        <p>Don't over-tension the belts initially - you can fine-tune tension after the printer is assembled.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 8 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">8</div>
+                    <div class="step-title">Assemble Frame and Install Bed</div>
+                    <div class="step-subtitle">Bolting frame together and mounting heated bed</div>
+                </div>
+                <div class="step-content">
+                    <p>Bolt the frame together. Remember to have the middle frame pieces without headsets on the outside towards the front.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/frame-assembly.png" alt="Complete frame assembly" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Add the small sticky feet to the bottom of the frame.</p>
+
+                    <p>Attach the heated bed to the frame using 3x M3x16 screws and 3x M4 thumbscrews as spacers between the bed and the frame.</p>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Note</h4>
+                        <p>The bed may arrive pre-assembled - verify the assembly state before proceeding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 9 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">9</div>
+                    <div class="step-title">Install Motor Covers and Electronics Panels</div>
+                    <div class="step-subtitle">Adding protective covers and mounting panels</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the 3 motor covers using M3x6 screws. Note that the one with the notch goes on the back "C" corner.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/motor-covers.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Attach the top electronics panels - these are marked. Text goes up.</p>
+
+                    <div class="info-block">
+                        <h4>ℹ️ Tip</h4>
+                        <p>Check the panel markings carefully to ensure correct orientation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 10 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">10</div>
+                    <div class="step-title">Assemble and Install Hotend</div>
+                    <div class="step-subtitle">Mounting the hotend assembly to the effector</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the TR6_hotend_mount to the Effector using 4x M3x8 screws.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/hotend-assembly.png" alt="Hotend assembly" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Attach the hotend to the TR6_hotend_mount using 2x M3x16 screws.</p>
+
+                    <p>Attach the 3010 hotend fan using 3x M3x16 screws.</p>
+
+                    <p>Route the hotend and 5015 fan wires through the cable relief hole on the left side and attach the 5015 fan using a M3x20 screw.</p>
+
+                    <p>Bolt the effector to the carriages using the arms and 12x M3x20 screws.</p>
+                </div>
+            </div>
+
+            <!-- CHAPTER 11 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">11</div>
+                    <div class="step-title">Install Extruder and PTFE Tube</div>
+                    <div class="step-subtitle">Mounting the BMG extruder</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the back left panel, then attach the BMG extruder to it using 2x M3x10 screws and heat inserts as nuts on the inside.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/extruder-installation.png" alt="Extruder installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <div class="success-block">
+                        <h4>💡 Tip</h4>
+                        <p>This is a good time to cut and install the PTFE tube to the proper length.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 12 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">12</div>
+                    <div class="step-title">Prepare Top Electronics Cover</div>
+                    <div class="step-subtitle">Assembling cover and installing magnets</div>
+                </div>
+                <div class="step-content">
+                    <p>Prepare the top electronics cover by bolting it together using 3x M3x8 screws and gluing in the 6 magnets.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/top-cover-magnets.png" alt="Top cover magnet installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Now is also a good time to glue in the magnets on the top frame, keeping polarization in mind.</p>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Important</h4>
+                        <p>Check magnet polarity before gluing to ensure proper attraction between cover and frame.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 13 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">13</div>
+                    <div class="step-title">Install DZ01 Board and RGB Strip</div>
+                    <div class="step-subtitle">Mounting the control board and lighting</div>
+                </div>
+                <div class="step-content">
+                    <p>Install the DZ01 board in the electronics bay using 4x M3x6 screws.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/dz01-installation.png" alt="DZ01 board installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Install the RGB strip to the inside of the chamber using 2 zip ties on the top cover (labeled location).</p>
+                </div>
+            </div>
+
+            <!-- CHAPTER 14 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">14</div>
+                    <div class="step-title">Wiring and Klipper Installation</div>
+                    <div class="step-subtitle">Connecting electronics and installing firmware</div>
+                </div>
+                <div class="step-content">
+                    <p>Connect all the wires according to the wiring diagram.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/wiring_diagram.png" alt="Delta Flyer Wiring Diagram" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Install Klipper on the DZ01 and run through the first setup process using the <a href="klipper-tutorial.html">Klipper Installation Manual</a>.</p>
+
+                    <div class="info-block">
+                        <h4>ℹ️ Reference</h4>
+                        <p>Refer to the separate Klipper tutorial for detailed software setup instructions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 15 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">15</div>
+                    <div class="step-title">Install Wire Covers</div>
+                    <div class="step-subtitle">Adding cable management covers</div>
+                </div>
+                <div class="step-content">
+                    <p>After initial setup, install the 2 wire covers on the inside of the left panel using 8x M3x6 screws.</p>
+
+                    <div class="diagram-image">
+                        <img src="assets/images/wire-covers.png" alt="Wire cover installation" style="max-wid
