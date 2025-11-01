@@ -499,3 +499,11 @@ footer {
     background-color: purple;
     /* or any other styling you want */
 }
+
+.hero h1 img {
+    max-width: 300px; /* Adjust to your preferred size */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the image if needed */
+}
+
