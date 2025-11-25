@@ -139,7 +139,13 @@
                         <h4>WiFi Configuration</h4>
                         <p>In this file, find the "WIFI_SSID" line and add your wifi-SSID, next, go to the "WIFI_PASSWD" line and enter your Wifi's password, make sure to keep the apostrophes. Then save and close this file, pull the SD from your computer, and put it into the microSD slot on the M4P. Remember, the CB1 can only connect to 2.4GHz Wifi.</p>
                     </div>
-
+                    <p>You should end up with something like this:</p>
+                                <pre><code>
+                                    ## wifi name
+                                    WIFI_SSID="Your SSID"
+                                    ## wifi password
+                                    WIFI_PASSWD="Your Password"
+                                </code></pre>
                     <p>We can also set a custom name for this printer on the network by changing the line at the top that says: <span class="inline-code">"#hostname="BTT-CB1""</span> into <span class="inline-code">"hostname="DELTA-FLYER""</span></p>
                     
                     <div class="warning-block">
