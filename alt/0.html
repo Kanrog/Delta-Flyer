@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Delta Flyer Build Manual</title>
+    <link rel="stylesheet" href="../assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(63, 114, 104, 0.3);
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(63, 114, 104, 0.5);
+        }
+        .nav-button.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .step-indicator {
+            font-size: 1.1rem;
+            color: var(--light-green);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Main Page</a>
+            <div class="nav-title">Delta Flyer Build Manual</div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>LDO Rolohaun Delta Flyer</h1>
+            <div class="subtitle">Complete Build Manual</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Buttons Top -->
+        <div class="nav-buttons">
+            <a href="#" class="nav-button disabled">← Previous</a>
+            <span class="step-indicator">Step 0 of 18</span>
+            <a href="1.html" class="nav-button">Next →</a>
+        </div>
+
+        <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">0</div>
+                    <div class="step-title">Introduction</div>
+                    <div class="step-subtitle">Please read this first</div>
+                </div>
+                <div class="step-content">
+                    <p>This is a draft version of the Delta Flyer build-manual and is not the final manual.</p>
+
+                    <p>In this document I'm going to walk you through building the Flyer in rough steps. Please be aware that you would need some experience building printers to follow these instructions.</p>
+                    <p>First of all, you will need some tools:.</p>
+                    <ul>
+                        <li>Soldering Iron or a heatset-press to insert heatsets into the printed parts.</li>
+                        <li>Epoxy and CA glue</li>
+                        <li>2 and 3mm hex screwdrivers</li>
+                        <li>PC with microSD card reader</li>
+                    </ul>
+                    <div class="info-block">
+                        <h4>ℹ️ Printed Parts</h4>
+                        <p>If you havent already printed your parts, I have a general <a href="https://kanrog.github.io/printing_guide.html" class="url-link" target="_blank" rel="noopener">printing guide</a> that might be for you.</p>
+                        </div>
+                            <div class="info-block">
+                            <h4>ℹ️ Carriages needs extra care!</h4>
+                            <p><strong>The carriages needs to be printed in a dark, non-translucent filament for the optical endstops to work, you can do a filament swap to make just the little horn on them in a dark filament if you want.</strong></p>
+                            </div>
+                    <div class="warning-block">
+                        <h4>⚠️ Important</h4>
+                        <p>This has been written from memory, so please let me know if I've missed something.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons Bottom -->
+        <div class="nav-buttons">
+            <a href="#" class="nav-button disabled">← Previous</a>
+            <span class="step-indicator">Step 0 of 18</span>
+            <a href="1.html" class="nav-button">Next →</a>
+        </div>
+    </div>
+</body>
+</html>
