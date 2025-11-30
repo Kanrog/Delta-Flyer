@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 18 - Delta Flyer Build Manual</title>
+    <link rel="stylesheet" href="../assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(63, 114, 104, 0.3);
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(63, 114, 104, 0.5);
+        }
+        .nav-button.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .step-indicator {
+            font-size: 1.1rem;
+            color: var(--light-green);
+            font-weight: bold;
+        }
+        .completion-card {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+        }
+        .completion-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .completion-card p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Main Page</a>
+            <div class="nav-title">Delta Flyer Build Manual</div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>LDO Rolohaun Delta Flyer</h1>
+            <div class="subtitle">Complete Build Manual</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Buttons Top -->
+        <div class="nav-buttons">
+            <a href="17.html" class="nav-button">← Previous</a>
+            <span class="step-indicator">Step 18 of 18</span>
+            <a href="../index.html" class="nav-button">Back to Home</a>
+        </div>
+
+        <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">18</div>
+                    <div class="step-title">Final Assembly and Power On</div>
+                    <div class="step-subtitle">Installing spool holder and first power-up</div>
+                </div>
+                <div class="step-content">
+                    <p>Install the <strong>spool holder</strong> to the top cover using <mark>2x M3x12 screws</mark>.</p>
+
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/41.png" alt="Spool holder installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Place the top cover on the printer using the magnets to secure it.</p>
+
+                    <div class="success-block">
+                        <h4>🎉 Assembly Complete!</h4>
+                        <p>Your Delta Flyer is now fully assembled. Before powering on, double-check all connections and make sure no tools or parts are left inside the printer.</p>
+                    </div>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Before First Power-On</h4>
+                        <ul>
+                            <li>Verify all wiring connections match the diagram</li>
+                            <li>Check that all screws are properly tightened</li>
+                            <li>Ensure belts are tensioned correctly</li>
+                            <li>Confirm no wires are pinched or in the way of moving parts</li>
+                            <li>Make sure the power supply voltage switch is set correctly for your region</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>📚 Next Steps</h4>
+                        <p>Now that assembly is complete, you'll need to:</p>
+                        <ul>
+                            <li>Flash the firmware to your BTT DZ01 board</li>
+                            <li>Configure Klipper settings</li>
+                            <li>Perform initial calibration (PID tuning, delta calibration, etc.)</li>
+                            <li>Run test prints to verify everything is working correctly</li>
+                        </ul>
+                        <p>Refer to the <a href="../index.html" style="color: var(--light-green); font-weight: bold;">software setup guide</a> for detailed instructions on firmware configuration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completion Card -->
+            <div class="completion-card">
+                <h2>🎊 Congratulations! 🎊</h2>
+                <p>You've successfully completed the mechanical assembly of your LDO Rolohaun Delta Flyer!</p>
+                <p style="margin-top: 20px;">We hope you enjoy printing with your new delta printer.</p>
+                <p style="margin-top: 10px; font-size: 1rem;">— The Kanrog Creations Team</p>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons Bottom -->
+        <div class="nav-buttons">
+            <a href="17.html" class="nav-button">← Previous</a>
+            <span class="step-indicator">Step 18 of 18</span>
+            <a href="../index.html" class="nav-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
