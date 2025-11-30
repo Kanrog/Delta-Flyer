@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1 - Delta Flyer Build Manual</title>
+    <link rel="stylesheet" href="../assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(63, 114, 104, 0.3);
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(63, 114, 104, 0.5);
+        }
+        .nav-button.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .step-indicator {
+            font-size: 1.1rem;
+            color: var(--light-green);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Main Page</a>
+            <div class="nav-title">Delta Flyer Build Manual</div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>LDO Rolohaun Delta Flyer</h1>
+            <div class="subtitle">Complete Build Manual</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Buttons Top -->
+        <div class="nav-buttons">
+            <a href="0.html" class="nav-button">← Previous</a>
+            <span class="step-indicator">Step 1 of 18</span>
+            <a href="2.html" class="nav-button">Next →</a>
+        </div>
+
+        <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Prepare Arms and Printed Parts</div>
+                    <div class="step-subtitle">Assembling the delta arms and removing supports</div>
+                </div>
+                <div class="step-content">
+                    <p>Glue the arms together using the <mark>M3x30 threaded rods</mark> between the joints and the 100mm rods on the <strong>printed jig.</strong> Use <mark>2xM3x20</mark> in the jig to allign everyhing. Keep the joints oriented identically on each end.</p>
+                    
+                    <div class="warning-block">
+                        <h4>⚠️ Important</h4>
+                        <p>Be extra carefull when gluing these together, do them one at a time on a single printed jig for the best result.</p>
+                    </div>
+                    <div class="info-block">
+                        <h4>ℹ️ Printing parts</h4>
+                        <p>There are two different sets of carbon rods in the kit, 100mm long is for the joints that are included, 105mm is for making arms using the optional MPJets</p>
+                    </div>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/8.png" alt="Delta arms assembly" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Prepare all printed parts by removing all the built-in supports from:</p>
+                    <ul>
+                        <li>Top_Frame(middle) (light blue piece)</li>
+                    </ul>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/9.png" alt="Headset installation locations" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <ul>
+                        <li>Top_Frame_A and B (gray piece)</li>
+                    </ul>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/10.png" alt="Headset installation locations" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <ul>
+                        <li>Top_Frame_C (gray piece)</li>
+                    </ul>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/11.png" alt="Headset installation locations" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <ul> 
+                        <li>Carriage (gray piece)</li>
+                    </ul>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/12.png" alt="Headset installation locations" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Important</h4>
+                        <p>Ensure all support material is completely removed before assembly to prevent fitment issues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons Bottom -->
+        <div class="nav-buttons">
+            <a href="0.html" class="nav-button">← Previous</a>
+            <span class="step-indicator">Step 1 of 18</span>
+            <a href="2.html" class="nav-button">Next →</a>
+        </div>
+    </div>
+</body>
+</html>
