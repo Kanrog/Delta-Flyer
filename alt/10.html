@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 10 - Delta Flyer Build Manual</title>
+    <link rel="stylesheet" href="../assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(63, 114, 104, 0.3);
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(63, 114, 104, 0.5);
+        }
+        .nav-button.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .step-indicator {
+            font-size: 1.1rem;
+            color: var(--light-green);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Main Page</a>
+            <div class="nav-title">Delta Flyer Build Manual</div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>LDO Rolohaun Delta Flyer</h1>
+            <div class="subtitle">Complete Build Manual</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Buttons Top -->
+        <div class="nav-buttons">
+            <a href="9.html" class="nav-button">← Previous</a>
+            <span class="step-indicator">Step 10 of 18</span>
+            <a href="11.html" class="nav-button">Next →</a>
+        </div>
+
+        <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">10</div>
+                    <div class="step-title">Assemble and Install Hotend</div>
+                    <div class="step-subtitle">Mounting the hotend assembly to the effector</div>
+                </div>
+                <div class="step-content">
+                    <p>Attach the <strong>TR6_hotend_mount</strong> to the <strong>Effector</strong> using <mark>4x M3x8 screws</mark>.</p>
+                   <div class="warning-block">
+                        <h4>⚠️ Note</h4>
+                        <p>You are screwing into plastic, dont over-tighten these.</p>
+                    </div>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/24.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
+                    <p>Attach the <strong>TR6 hotend</strong> to the <strong>TR6_hotend_mount</strong> using <mark>2x M3x16 screws</mark>.</p>
+
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/25.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    
+                    <p>Attach the <strong>3010 hotend fan</strong> using <mark>3x M3x16 screws</mark>. Make sure the sticker on the fan is facing intowards the hotend.</p>
+
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/26.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    
+                    <p>Route the <strong>hotend wires</strong> out the left side of the effector, grab the <strong>3010 fan wires</strong> and route them all through the cable relief hole on the 5015 fan mount side and attach the <strong>5015 fan</strong> using a <mark>M3x20 screw</mark>. Make sure you get the 5015 wire in that hole as well.</p>
+
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/27.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <div class="diagram-image">
+                        <img src="../assets/images/toolhead.jpg" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <p>(Thank you to Mitsubishi Makes for this image)</p>
+                    <div></div>
+
+                    <p>Bolt the <strong>Trihorn duct</strong> to the bottom of the effector using <mark>2x M3x16 screws</mark>.</p>
+
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/28.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    
+                    <p>Bolt the <strong>effector</strong> to the <strong>carriages</strong> using the arms and <mark>12x M3x20 screws</mark> in the orientation showed here.</p>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/39.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <div class="diagram-image">
+                        <img src="../assets/images/manual/29.png" alt="Motor cover installation" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons Bottom -->
+        <div class="nav-buttons">
+            <a href="9.html" class="nav-button">← Previous</a>
+            <span class="step-indicator">Step 10 of 18</span>
+            <a href="11.html" class="nav-button">Next →</a>
+        </div>
+    </div>
+</body>
+</html>
