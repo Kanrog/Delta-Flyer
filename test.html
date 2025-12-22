@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klipper Tutorial - Delta Flyer Refit</title>
+    <link rel="stylesheet" href="assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Delta Flyer Refit</a>
+            <div class="nav-title">Klipper Setup Tutorial</div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Rolohaun LDO Delta Flyer Refit</h1>
+            <div class="subtitle">Software and First Print Tutorial</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Wiring Diagram Reference -->
+        <section class="wiring-diagram">
+            <h3>Delta Flyer Refit - Wiring Reference</h3>
+            <div class="diagram-image">
+                <img src="assets/images/wiring_diagram.png" alt="Delta Flyer Refit Wiring Diagram" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+            </div>
+        </section>
+
+        <!-- Section 1: Notes -->
+        <section class="content-section">
+            <h2 class="section-title">1. Notes</h2>
+            
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">ℹ️</div>
+                    <div class="step-title">Optional Tutorial</div>
+                </div>
+                <div class="step-content">
+                    <div class="info-block">
+                        <h4>Klipper Compatibility</h4>
+                        <p>The klipper-section of this tutorial is a general guide to installing Klipper on the BTT DZ01, and can be used for pretty much any printer using that board, not just the Flyer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">📁</div>
+                    <div class="step-title">Important</div>
+                </div>
+                <div class="step-content">
+                    <div class="warning-block">
+                        <h4>Board Compatibility</h4>
+                        <p>The config files used are specifically for the LDO Delta Flyer kit using a BTT DZ01, if you are using a different board, the config files will not work, but the macros should work on any Flyer setup.</p>
+                    </div>
+                    
+                    <div class="warning-block">
+                        <h4>Jumpers and switches</h4>
+                        <p>The BTT DZ01 comes preinstalled with some jumpers on the board. Remove <mark>ALL OF THEM</mark> before powering on the printer. Make sure the switches on the board are in the "<mark>OTG-TYPEC</mark>" and "<mark>H616-RP2040</mark>" positions. The board might not function properly if these are set wrong. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Step-by-Step Process -->
+        <section class="content-section">
+            <h2 class="section-title">2. Step-by-Step Process/Content</h2>
+
+            <!-- Step 1: Download Software -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Download Software and Files</div>
+                    <div class="step-subtitle">Essential tools and files for setup</div>
+                </div>
+                <div class="step-content">
+                    <p>To complete this tutorial, we need Balena Etcher or another Imaging tool like pi imager or Win32DiskImager. I won't cover installing these, but it should be pretty straight forward.</p>
+                    
+                    <div class="downloads-grid">
+                        <div class="download-card">
+                            <h4>Balena Etcher</h4>
+                            <p>Image flashing tool for SD cards</p>
+                            <a href="https://etcher.balena.io/" class="url-link" target="_blank" rel="noopener">https://etcher.balena.io/</a>
+                        </div>
+                        
+                        <div class="download-card">
+                            <h4>Angry IP Scanner</h4>
+                            <p>Network device discovery tool</p>
+                            <a href="https://angryip.org/download/#windows" class="url-link" target="_blank" rel="noopener">https://angryip.org/download/#windows</a>
+                        </div>
+                        
+                        <div class="download-card">
+                            <h4>CB1 Image</h4>
+                            <p>Bigtreetech CB1 firmware image</p>
+                            <a href="https://github.com/bigtreetech/CB1/releases" class="url-link" target="_blank" rel="noopener">https://github.com/bigtreetech/CB1/releases</a>
+                        </div>
+                        
+                        <div class="download-card">
+                            <h4>OrcaSlicer</h4>
+                            <p>3D printing slicer software</p>
+                            <a href="https://github.com/SoftFever/OrcaSlicer/releases" class="url-link" target="_blank" rel="noopener">https://github.com/SoftFever/OrcaSlicer/releases</a>
+                        </div>
+                        
+                        <div class="download-card">
+                            <h4>Config Bundle</h4>
+                            <p>Delta Flyer configuration files</p>
+                            <a href="https://raw.githubusercontent.com/Kanrog/Delta-Flyer/main/assets/configs/printer.cfg" class="url-link" download>Download printer.cfg</a>
+                        </div>
+                    </div>
+
+                    <p>To find our device on the network, I'll be using a software called "Angry IP Scanner", they have a portable version that wont need to be installed on your computer, let's download that.</p>
+
+                    <p>Next we need the image to put on the micro SD going into the CB1, this can be downloaded from Bigtreetech's Github, I recommend getting the larger of the two versions.</p>
+
+                    <p>To slice our 3D models for printing, we will be using Orcaslicer. You can download the latest build from their github.</p>
+
+                    <p>Finally, we are going to download the config bundle from the Kanrog Creations Github, ready to transfer over to our Flyer.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Burn CB1 Image -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Burn CB1 Image</div>
+                    <div class="step-subtitle">Flashing and configuring the CB1 board</div>
+                </div>
+                <div class="step-content">
+                    <p>Unzip the CB1 imagefile</p>
+                    
+                    <p>Insert the micro SD card into your computer, open Balena Etcher(or another imaging tool of your choice), select the CB1 image we downloaded, Select the micro SD card as a target and press "Flash!". This will take a few minutes.</p>
+
+                    <p>Next, pull the SD card out and put it back into the computer, navigate to it in the file explorer and find the file called <span class="inline-code">system.cfg</span>, and open it in a text-editor.</p>
+
+                    <div class="info-block">
+                        <h4>WiFi Configuration</h4>
+                        <p>In this file, find the "WIFI_SSID" line and add your wifi-SSID, next, go to the "WIFI_PASSWD" line and enter your Wifi's password, make sure to keep the apostrophes. Then save and close this file, pull the SD from your computer, and put it into the microSD slot on the M4P. Remember, the CB1 can only connect to 2.4GHz Wifi.</p>
+                    </div>
+                    <p>You should end up with something like this:</p>
+                                <pre><code>
+                                    ## wifi name
+                                    WIFI_SSID="Your SSID"
+                                    ## wifi password
+                                    WIFI_PASSWD="Your Password"
+                                </code></pre>
+                    <p>We can also set a custom name for this printer on the network by changing the line at the top that says: <span class="inline-code">"#hostname="BTT-CB1""</span> into <span class="inline-code">"hostname="DELTA-FLYER""</span></p>
+                    
+                    <div class="warning-block">
+                        <h4>Important Note</h4>
+                        <p>(Remember to uncomment the line by removing the "#") Any name works, avoid spaces. Remember to save.</p>
+                    </div>
+
+                    <p>Remove the SD card and insert it into the BTT DZ01.</p>
+
+                    <p>Now we are ready to power up the printer for the first time! Just take a minute and make sure you don't have any loose wires and that everything is connected somewhere.</p>
+
+                    <p>Boot up the printer and give it a little time to do its initial boot, this takes longer the first time, normally not longer than 5-10 minutes.</p>
+
+                    <p>After the printer has booted up, we need to find the IP of the printer, there are a couple ways to do that, usually by logging in to your wifi-router, but this is different depending on what router you have, so I will be using a different method; the Angry IP scanner we downloaded earlier.</p>
+
+                    <p>Open the <span class="inline-code">ipscan_win64-xx.exe</span> we downloaded earlier and hit "Start". Let it finish the scan, and when it's done, it will give you a prompt saying "Scanning Complete". Click close.</p>
+
+                    <p>Now we can sort the list by "Hostname" and look for our CB1, it should show up as the name you set earlier in the list. If not, look for an IP using the port "80". Now we have the IP for our printer!</p>
+
+                    <p>To make sure everything is working, let's open this IP in a browser and see if we can connect to the printer that way first.</p>
+
+                    <p>While we are in here, let's do some cleanup and get ready to transfer the config files. Go to the "Machine" tab and press the "Create Directory" icon. Let's call this folder "Old" because we are going to put all the files that we don't need in here.</p>
+
+                    <p>Now, lets move some files into this folder by simply dragging them in, lets move the <span class="inline-code">[printer.cfg]</span> and <span class="inline-code">[print_area_bed_mesh.cfg]</span> files. We do this mostly as a good habit. There's nothing worse than deleting something and realizing you need it later.</p>
+
+                    <p>After clearing up some space, we can open the config bundle in a file explorer and drag the <span class="inline-code">printer.cfg</span> into the mainsail browser-window, this will copy it onto our printer.</p>
+
+                    <p>Press "Save and Restart" at the top of the window and then power cycle the printer.</p>
+
+                    <div class="success-block">
+                        <h4>Success!</h4>
+                        <p>Your printer should now be up and running!</p>
+                    </div>
+                    
+                    <div class="warning-block">
+                        <h4>Config file note:</h4>
+                        <p>Make sure you read trough the config file, there is a lot of usefull information in there,</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Macros -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Macros</div>
+                    <div class="step-subtitle">Setting up helpful automation macros</div>
+                </div>
+                <div class="step-content">
+                    <p>I've included a set of macros that will help you get going. If you are like me, you can sort them to make things a little more organized.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Delta Calibrate -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Delta Calibrate</div>
+                    <div class="step-subtitle">Calibrating the delta motion system</div>
+                </div>
+                <div class="step-content">
+                    <p>Lets get the delta motion system calibrated; Press the macro called "ENDSTOPS CALIBRATION". The printer will home itself and start the built in endstop calibration tool, After it is done, press the "SAVE AND RESTART" button at the top of the screen.</p>
+
+                    <p>Now we will make sure the effector (toolhead) moves parallel to the bed using the good old paper method. Press the "DELTA CALIBRATE MANUAL" macro and use the on-screen tool that pops up to adjust each of the 7 points on the bed. To do this, place a piece of paper between the nozzle and the bed and slowly lower the toolhead using the "-" button until you feel resistance on the paper. Now fine tune it so that you can move the paper, but still have a little resistance and press "ACCEPT" when you are happy. Repeat until the tool is complete. (the amount of resistance isn't important, just make sure it's the same amount across all points)</p>
+                    
+                    <p>After it is done, press the "SAVE AND RESTART" button at the top of the screen.</p>
+                        <div class="warning-block">
+                        <h4>Important Note</h4>
+                        <p>During this process, if the printer skips at any point, you have to restart the procedure!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: PID -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <div class="step-title">PID</div>
+                    <div class="step-subtitle">Calibrating heater controllers</div>
+                </div>
+                <div class="step-content">
+                    <p>We want to calibrate our heaters. To do this, simply use the respective macros, "PID HOTEND" and "PID HEATBED". The printer will save and restart after each of them. This will take a while.</p>
+                </div>
+            </div>
+
+            <!-- Step 6: OrcaSlicer Setup -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">6</div>
+                    <div class="step-title">Orcaslicer Setup</div>
+                    <div class="step-subtitle">Configuring the slicer software</div>
+                </div>
+                <div class="step-content">
+                    <p>Install and open Orcaslicer. (Needs to be V2.3.1 or newer)</p>
+
+                    <p>In the window that appears, press "Get started" and find the RolohaunDesign Delta Flyer, select 0.4 nozzle (if you have a stock setup) and press "Next".</p>
+
+                    <p>In the next window, we can select the filament types we want to have available. The Delta Flyer can print PLA, PETG, ABS, TPU and PC. Press "Next".</p>
+
+                    <p>Enable stealth mode and press "Next".</p>
+
+                    <p>Enable "Install Bambu Network plug-in" and press "Next". Let it install and click "close".</p>
+
+                    <p>Navigate to the "Prepare" tab, press the little Wifi button next to the name of the printer, find the "Hostname" box and enter the IP used to open Mainsail in your browser, press "enter" and "Test" to make sure the connection works. Give your printer a name at the top and press "OK".</p>
+
+                    <div class="success-block">
+                        <h4>Connected!</h4>
+                        <p>You now have access to mainsail directly in the slicer in the "Device" tab!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7: First Print -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">7</div>
+                    <div class="step-title">First Print!</div>
+                    <div class="step-subtitle">Z-offset calibration and test printing</div>
+                </div>
+                <div class="step-content">
+                    <p>For our first print, we are going to do a Z-offset fine tune, as well as check our leveling.</p>
+                    
+                    <p>To do this, Right click the build-area in OrcaSlicer, navigate to "Add Primitive" -> "Cylinder".</p>
+
+                    <p>With the cylinder selected, press the "Scale" tool on the top toolbar and uncheck "Uniform scale", enter 80,80 and 0.2 in the "size" boxes.</p>
+
+                    <p>At the top bar, press "Slice plate"</p>
+
+                    <p>Insert filament into the extruder, navigate to the "Device" tab, and press the "Load Filament" macro, this should pull the filament all the way to the hotend.</p>
+
+                    <p>Back in the "Preview" tab in OrcaSlicer, press "Print" followed by "Upload and Print" This will send the file to your printer and automatically start the print.</p>
+
+                    <p>Go to the "Device" tab again and make sure your printer is heating up and getting ready to print.</p>
+
+                    <p>When the print starts, use the "Z-Offset" tool in the "Toolhead" window to adjust the height of your hotend to the bed until you have a nice and smooth first layer, with no gaps between the lines.</p>
+
+                    <p>Repeat the print if needed. When the first layer looks good, press "SAVE"(in the z-offset window) and "SAVE CONFIG".</p>
+
+                    <p>You are now ready for your first ACTUAL print. I recommend downloading the <a href="https://www.printables.com/model/517776-rolohaun-calibration-cube" target="_blank">"Rolo Cube" from Printables</a> and print as your first print. It's a good way to ensure your printer works as it should, and is a great opportunity to make a short little video to upload to Youtube for your serial application!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Recap & Conclusion -->
+        <section class="content-section">
+            <h2 class="section-title">3. Recap & Conclusion</h2>
+            
+            <div class="conclusion">
+                <h2>🎉 Congratulations!</h2>
+                <p>If you have any issues during the setup, please reach out to us on the Rolohaun discord.</p>
+                <a href="https://discord.gg/5F9M6Ty3" class="discord-link" target="_blank" rel="noopener">Join Rolohaun Discord</a>
+                <p>At this point, you have a printer you can enjoy, print what your heart desires!</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Troubleshooting -->
+        <section class="content-section">
+            <h2 class="section-title">4. Troubleshooting</h2>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">⚠️</div>
+                    <div class="step-title">Fix for "Error during homing stepper_a: Communication timeout during homing"</div>
+                </div>
+                <div class="step-content">
+                    <h3>Step-by-Step Instructions</h3>
+
+                    <h4>1. Connect to Your Printer</h4>
+                    <ul>
+                        <li>On Windows, open <strong>Command Prompt</strong></li>
+                        <li>Type: <span class="inline-code">ssh biqu@PRINTER-IP</span> (replace PRINTER-IP with your actual printer IP address)</li>
+                        <li>Press <strong>ENTER</strong></li>
+                        <li>When prompted for a password, type: <span class="inline-code">biqu</span></li>
+                        <li>Press <strong>ENTER</strong></li>
+                    </ul>
+
+                    <h4>2. Open the Configuration File</h4>
+                    <ul>
+                        <li>Type: <span class="inline-code">sudo nano ./klipper/klippy/mcu.py</span></li>
+                        <li>Press <strong>ENTER</strong> to open the text editor</li>
+                    </ul>
+
+                    <h4>3. Find and Edit the Timeout Value</h4>
+                    <ul>
+                        <li>Use the <strong>Down Arrow</strong> key to scroll down</li>
+                        <li>Find the line: <span class="inline-code">TRSYNC_TIMEOUT = 0.025</span></li>
+                        <li>Change it to: <span class="inline-code">TRSYNC_TIMEOUT = 0.050</span></li>
+                    </ul>
+
+                    <h4>4. Save Your Changes</h4>
+                    <ul>
+                        <li>Press <strong>CTRL + X</strong></li>
+                        <li>Press <strong>Y</strong></li>
+                        <li>Press <strong>ENTER</strong></li>
+                    </ul>
+
+                    <h4>5. Reboot the Printer</h4>
+                    <ul>
+                        <li>Type: <span class="inline-code">sudo reboot now</span></li>
+                        <li>Press <strong>ENTER</strong></li>
+                        <li>The printer will reboot automatically</li>
+                    </ul>
+
+                    <div class="success-block">
+                        <h4>Result</h4>
+                        <p>The error should be resolved after the reboot completes.</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Credit</h4>
+                        <p>Thanks to @__esm__ on Discord for this solution!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Main Site -->
+        <section class="back-section">
+            <div class="back-card">
+                <h3>Return to Delta Flyer Refit</h3>
+                <p>Ready to explore more resources and configuration files?</p>
+                <a href="index.html" class="back-button">← Back to Main Site</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
