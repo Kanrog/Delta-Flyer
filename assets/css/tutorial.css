@@ -10,15 +10,15 @@
   --success-color: #27ae60;
   --warning-color: #f39c12;
   --danger-color: #e74c3c;
-  --light-gray: #ecf0f1;
-  --medium-gray: #bdc3c7;
+  --light-gray: #1a1a1a;
+  --medium-gray: #333333;
   --dark-gray: #7f8c8d;
-  --text-primary: #2c3e50;
-  --text-secondary: #7f8c8d;
-  --background: #ffffff;
-  --border-color: #e1e8ed;
-  --shadow: 0 2px 10px rgba(0,0,0,0.1);
-  --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --background: #0a0a0a;
+  --border-color: #333333;
+  --shadow: 0 2px 10px rgba(0,0,0,0.3);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 * {
@@ -33,6 +33,31 @@ body {
   color: var(--text-primary);
   background: var(--background);
   font-size: 16px;
+}
+
+/* Dark mode card backgrounds */
+.step-card,
+.wiring-diagram,
+.download-card,
+.back-card,
+.code-block {
+  background: #1a1a1a !important;
+  color: var(--text-primary);
+}
+
+.info-block {
+  background: rgba(52, 152, 219, 0.15) !important;
+  border-left-color: var(--accent-color);
+}
+
+.warning-block {
+  background: rgba(243, 156, 18, 0.15) !important;
+  border-left-color: var(--warning-color);
+}
+
+.success-block {
+  background: rgba(39, 174, 96, 0.15) !important;
+  border-left-color: var(--success-color);
 }
 
 /* Print Styles */
@@ -170,7 +195,7 @@ body {
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 30px;
   padding-bottom: 15px;
   border-bottom: 3px solid var(--accent-color);
@@ -189,7 +214,7 @@ body {
 
 /* Step Cards */
 .step-card {
-  background: white;
+  background: #1a1a1a;
   border-radius: 12px;
   box-shadow: var(--shadow);
   margin-bottom: 30px;
@@ -244,6 +269,7 @@ body {
 .step-content p {
   margin-bottom: 20px;
   line-height: 1.7;
+  color: var(--text-primary);
 }
 
 .step-content p:last-child {
@@ -252,27 +278,30 @@ body {
 
 /* Special Content Blocks */
 .info-block {
-  background: #e8f4fd;
+  background: rgba(52, 152, 219, 0.15);
   border-left: 4px solid var(--accent-color);
   padding: 20px;
   margin: 25px 0;
   border-radius: 0 8px 8px 0;
+  color: var(--text-primary);
 }
 
 .warning-block {
-  background: #fef9e7;
+  background: rgba(243, 156, 18, 0.15);
   border-left: 4px solid var(--warning-color);
   padding: 20px;
   margin: 25px 0;
   border-radius: 0 8px 8px 0;
+  color: var(--text-primary);
 }
 
 .success-block {
-  background: #eafaf1;
+  background: rgba(39, 174, 96, 0.15);
   border-left: 4px solid var(--success-color);
   padding: 20px;
   margin: 25px 0;
   border-radius: 0 8px 8px 0;
+  color: var(--text-primary);
 }
 
 .info-block h4,
@@ -280,6 +309,16 @@ body {
 .success-block h4 {
   margin-bottom: 10px;
   font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Lists */
+.step-content ul {
+  color: var(--text-primary);
+}
+
+.step-content li {
+  color: var(--text-primary);
 }
 
 /* Links */
@@ -301,7 +340,7 @@ body {
 
 /* Code and Technical Elements */
 .code-block {
-  background: #f8f9fa;
+  background: #1a1a1a;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 15px;
@@ -309,20 +348,22 @@ body {
   font-size: 0.9rem;
   margin: 20px 0;
   overflow-x: auto;
+  color: var(--text-primary);
 }
 
 .inline-code {
-  background: #f8f9fa;
+  background: #1a1a1a;
   padding: 2px 6px;
   border-radius: 4px;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   font-size: 0.9em;
   border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 /* Wiring Diagram Integration */
 .wiring-diagram {
-  background: white;
+  background: #1a1a1a;
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 30px;
@@ -331,7 +372,7 @@ body {
 }
 
 .wiring-diagram h3 {
-  color: var(--primary-color);
+  color: var(--text-primary);
   font-size: 1.8rem;
   margin-bottom: 25px;
   font-weight: 600;
@@ -366,12 +407,13 @@ body {
 }
 
 .download-card {
-  background: white;
+  background: #1a1a1a;
   border-radius: 8px;
   box-shadow: var(--shadow);
   padding: 25px;
   transition: all 0.3s ease;
   border-top: 4px solid var(--accent-color);
+  color: var(--text-primary);
 }
 
 .download-card:hover {
@@ -380,7 +422,7 @@ body {
 }
 
 .download-card h4 {
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 15px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -439,7 +481,7 @@ body {
 }
 
 .back-card {
-  background: var(--light-gray);
+  background: #1a1a1a;
   border-radius: 12px;
   padding: 40px;
   text-align: center;
@@ -447,7 +489,7 @@ body {
 }
 
 .back-card h3 {
-  color: var(--primary-color);
+  color: var(--text-primary);
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 600;
