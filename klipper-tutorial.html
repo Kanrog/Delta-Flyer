@@ -305,7 +305,68 @@
                 <p>At this point, you have a printer you can enjoy, print what your heart desires!</p>
             </div>
         </section>
+        
+        <!-- Section 4: Troubleshooting -->
+        <section class="content-section">
+            <h2 class="section-title">4. Troubleshooting</h2>
 
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">⚠️</div>
+                    <div class="step-title">Fix for "Error during homing stepper_a: Communication timeout during homing"</div>
+                </div>
+                <div class="step-content">
+                    <h3>Step-by-Step Instructions</h3>
+
+                    <h4>1. Connect to Your Printer</h4>
+                    <ul>
+                        <li>On Windows, open <strong>Command Prompt</strong></li>
+                        <li>Type: <span class="inline-code">ssh biqu@PRINTER-IP</span> (replace PRINTER-IP with your actual printer IP address)</li>
+                        <li>Press <strong>ENTER</strong></li>
+                        <li>When prompted for a password, type: <span class="inline-code">biqu</span></li>
+                        <li>Press <strong>ENTER</strong></li>
+                    </ul>
+
+                    <h4>2. Open the Configuration File</h4>
+                    <ul>
+                        <li>Type: <span class="inline-code">sudo nano ./klipper/klippy/mcu.py</span></li>
+                        <li>Press <strong>ENTER</strong> to open the text editor</li>
+                    </ul>
+
+                    <h4>3. Find and Edit the Timeout Value</h4>
+                    <ul>
+                        <li>Use the <strong>Down Arrow</strong> key to scroll down</li>
+                        <li>Find the line: <span class="inline-code">TRSYNC_TIMEOUT = 0.025</span></li>
+                        <li>Change it to: <span class="inline-code">TRSYNC_TIMEOUT = 0.050</span></li>
+                    </ul>
+
+                    <h4>4. Save Your Changes</h4>
+                    <ul>
+                        <li>Press <strong>CTRL + X</strong></li>
+                        <li>Press <strong>Y</strong></li>
+                        <li>Press <strong>ENTER</strong></li>
+                    </ul>
+
+                    <h4>5. Reboot the Printer</h4>
+                    <ul>
+                        <li>Type: <span class="inline-code">sudo reboot now</span></li>
+                        <li>Press <strong>ENTER</strong></li>
+                        <li>The printer will reboot automatically</li>
+                    </ul>
+
+                    <div class="success-block">
+                        <h4>Result</h4>
+                        <p>The error should be resolved after the reboot completes.</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Credit</h4>
+                        <p>Thanks to @__esm__ on Discord for this solution!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- Back to Main Site -->
         <section class="back-section">
             <div class="back-card">
