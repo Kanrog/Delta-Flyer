@@ -10,9 +10,21 @@
   --success-color: #27ae60;
   --warning-color: #f39c12;
   --danger-color: #e74c3c;
+  --light-gray: #ecf0f1;
+  --medium-gray: #bdc3c7;
+  --dark-gray: #7f8c8d;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --background: #ffffff;
+  --border-color: #e1e8ed;
+  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Dark Mode */
+body.dark-mode {
   --light-gray: #1a1a1a;
   --medium-gray: #333333;
-  --dark-gray: #7f8c8d;
   --text-primary: #e8e8e8;
   --text-secondary: #b0b0b0;
   --background: #0a0a0a;
@@ -33,31 +45,7 @@ body {
   color: var(--text-primary);
   background: var(--background);
   font-size: 16px;
-}
-
-/* Dark mode card backgrounds */
-.step-card,
-.wiring-diagram,
-.download-card,
-.back-card,
-.code-block {
-  background: #1a1a1a !important;
-  color: var(--text-primary);
-}
-
-.info-block {
-  background: rgba(52, 152, 219, 0.15) !important;
-  border-left-color: var(--accent-color);
-}
-
-.warning-block {
-  background: rgba(243, 156, 18, 0.15) !important;
-  border-left-color: var(--warning-color);
-}
-
-.success-block {
-  background: rgba(39, 174, 96, 0.15) !important;
-  border-left-color: var(--success-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Print Styles */
@@ -120,6 +108,24 @@ body {
   padding: 0 20px;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+}
+
 /* Navigation Header */
 .nav-header {
   background: var(--primary-color);
@@ -135,6 +141,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .back-link {
@@ -214,7 +226,7 @@ body {
 
 /* Step Cards */
 .step-card {
-  background: #1a1a1a;
+  background: var(--light-gray);
   border-radius: 12px;
   box-shadow: var(--shadow);
   margin-bottom: 30px;
@@ -276,32 +288,46 @@ body {
   margin-bottom: 0;
 }
 
+.step-content ul,
+.step-content li {
+  color: var(--text-primary);
+}
+
 /* Special Content Blocks */
 .info-block {
-  background: rgba(52, 152, 219, 0.15);
+  background: #e8f4fd;
   border-left: 4px solid var(--accent-color);
   padding: 20px;
   margin: 25px 0;
   border-radius: 0 8px 8px 0;
-  color: var(--text-primary);
+}
+
+body.dark-mode .info-block {
+  background: rgba(52, 152, 219, 0.15);
 }
 
 .warning-block {
-  background: rgba(243, 156, 18, 0.15);
+  background: #fef9e7;
   border-left: 4px solid var(--warning-color);
   padding: 20px;
   margin: 25px 0;
   border-radius: 0 8px 8px 0;
-  color: var(--text-primary);
+}
+
+body.dark-mode .warning-block {
+  background: rgba(243, 156, 18, 0.15);
 }
 
 .success-block {
-  background: rgba(39, 174, 96, 0.15);
+  background: #eafaf1;
   border-left: 4px solid var(--success-color);
   padding: 20px;
   margin: 25px 0;
   border-radius: 0 8px 8px 0;
-  color: var(--text-primary);
+}
+
+body.dark-mode .success-block {
+  background: rgba(39, 174, 96, 0.15);
 }
 
 .info-block h4,
@@ -312,12 +338,9 @@ body {
   color: var(--text-primary);
 }
 
-/* Lists */
-.step-content ul {
-  color: var(--text-primary);
-}
-
-.step-content li {
+.info-block,
+.warning-block,
+.success-block {
   color: var(--text-primary);
 }
 
@@ -340,7 +363,7 @@ body {
 
 /* Code and Technical Elements */
 .code-block {
-  background: #1a1a1a;
+  background: #f8f9fa;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 15px;
@@ -351,8 +374,12 @@ body {
   color: var(--text-primary);
 }
 
-.inline-code {
+body.dark-mode .code-block {
   background: #1a1a1a;
+}
+
+.inline-code {
+  background: #f8f9fa;
   padding: 2px 6px;
   border-radius: 4px;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
@@ -361,14 +388,22 @@ body {
   color: var(--text-primary);
 }
 
+body.dark-mode .inline-code {
+  background: #1a1a1a;
+}
+
 /* Wiring Diagram Integration */
 .wiring-diagram {
-  background: #1a1a1a;
+  background: white;
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 30px;
   margin: 40px 0;
   text-align: center;
+}
+
+body.dark-mode .wiring-diagram {
+  background: #1a1a1a;
 }
 
 .wiring-diagram h3 {
@@ -407,13 +442,16 @@ body {
 }
 
 .download-card {
-  background: #1a1a1a;
+  background: white;
   border-radius: 8px;
   box-shadow: var(--shadow);
   padding: 25px;
   transition: all 0.3s ease;
   border-top: 4px solid var(--accent-color);
-  color: var(--text-primary);
+}
+
+body.dark-mode .download-card {
+  background: #1a1a1a;
 }
 
 .download-card:hover {
@@ -481,11 +519,15 @@ body {
 }
 
 .back-card {
-  background: #1a1a1a;
+  background: white;
   border-radius: 12px;
   padding: 40px;
   text-align: center;
   box-shadow: var(--shadow);
+}
+
+body.dark-mode .back-card {
+  background: #1a1a1a;
 }
 
 .back-card h3 {
@@ -528,6 +570,11 @@ body {
   .nav-header .container {
     flex-direction: column;
     gap: 10px;
+  }
+  
+  .nav-left {
+    flex-direction: column;
+    width: 100%;
   }
   
   .header h1 {
