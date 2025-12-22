@@ -11,10 +11,11 @@
 <body>
     <!-- Navigation Header -->
     <nav class="nav-header">
-        <div class="container">
-            <a href="index.html" class="back-link">← Back to Main Page</a>
-            <div class="nav-title">Delta Flyer Build Manual</div>
-        </div>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Main Page</a>
+        <div class="nav-title">Delta Flyer Build Manual</div>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+    </div>
     </nav>
 
     <header class="header">
@@ -677,6 +678,25 @@
                 });
             });
         });
+    </script>
+
+        <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Initialize from saved preference
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️ Light Mode';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
     </script>
 </body>
 </html>
