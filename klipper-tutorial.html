@@ -1,14 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klipper Tutorial - Delta Flyer Refit</title>
+    <link rel="stylesheet" href="assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
 <body>
     <!-- Navigation Header -->
-<div class="nav-header">
-  <div class="container">
-    <div class="nav-left">
-      <a href="/" class="back-link">← Back to Main</a>
-      <span class="nav-title">Delta Flyer Setup Guide</span>
+    <div class="nav-header">
+      <div class="container">
+        <div class="nav-left">
+          <a href="/" class="back-link">← Back to Main</a>
+          <span class="nav-title">Delta Flyer Setup Guide</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+      </div>
     </div>
-    <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
-  </div>
-</div>
 
     <header class="header">
         <div class="container">
@@ -138,12 +148,12 @@
                         <p>In this file, find the "WIFI_SSID" line and add your wifi-SSID, next, go to the "WIFI_PASSWD" line and enter your Wifi's password, make sure to keep the apostrophes. Then save and close this file, pull the SD from your computer, and put it into the microSD slot on the M4P. Remember, the CB1 can only connect to 2.4GHz Wifi.</p>
                     </div>
                     <p>You should end up with something like this:</p>
-                                <pre><code>
-                                    ## wifi name
-                                    WIFI_SSID="Your SSID"
-                                    ## wifi password
-                                    WIFI_PASSWD="Your Password"
-                                </code></pre>
+                    <pre><code>
+## wifi name
+WIFI_SSID="Your SSID"
+## wifi password
+WIFI_PASSWD="Your Password"
+                    </code></pre>
                     <p>We can also set a custom name for this printer on the network by changing the line at the top that says: <span class="inline-code">"#hostname="BTT-CB1""</span> into <span class="inline-code">"hostname="DELTA-FLYER""</span></p>
                     
                     <div class="warning-block">
@@ -210,7 +220,7 @@
                     <p>Now we will make sure the effector (toolhead) moves parallel to the bed using the good old paper method. Press the "DELTA CALIBRATE MANUAL" macro and use the on-screen tool that pops up to adjust each of the 7 points on the bed. To do this, place a piece of paper between the nozzle and the bed and slowly lower the toolhead using the "-" button until you feel resistance on the paper. Now fine tune it so that you can move the paper, but still have a little resistance and press "ACCEPT" when you are happy. Repeat until the tool is complete. (the amount of resistance isn't important, just make sure it's the same amount across all points)</p>
                     
                     <p>After it is done, press the "SAVE AND RESTART" button at the top of the screen.</p>
-                        <div class="warning-block">
+                    <div class="warning-block">
                         <h4>Important Note</h4>
                         <p>During this process, if the printer skips at any point, you have to restart the procedure!</p>
                     </div>
@@ -406,3 +416,4 @@
       });
     </script>
 </body>
+</html>
