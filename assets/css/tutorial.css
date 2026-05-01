@@ -628,22 +628,33 @@ body.dark-mode .back-card {
   .nav-title {
     font-size: 1rem;
   }
+
+  /* Ensure the red box sits near the top of the header */
+.header .container {
+    padding-top: 0;
 }
+
+.header {
+    padding-top: 20px; /* Reduces the 60px gap so the notice is prominent */
+}
+
+/* Your Notice Box Styles */
 .outdated-notice-box {
-    background-color: #ff0000; /* Bright Red */
-    color: #ffffff; /* White text for readability */
+    background-color: #ff0000;
+    color: #ffffff;
     padding: 25px;
     margin-bottom: 30px;
-    border: 4px solid #b30000; /* Darker red border */
+    border: 4px solid #b30000;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .outdated-notice-box p {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-size: 1.4rem;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .notice-link {
@@ -661,4 +672,19 @@ body.dark-mode .back-card {
 .notice-link:hover {
     transform: scale(1.05);
     background-color: #f0f0f0;
+}
+
+/* Mobile Tweak */
+@media (max-width: 480px) {
+    .outdated-notice-box {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    .outdated-notice-box p {
+        font-size: 1.1rem;
+    }
+    .notice-link {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
