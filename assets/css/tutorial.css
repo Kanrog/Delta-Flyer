@@ -47,55 +47,63 @@ body {
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* --- ALERT BOX STYLES (KEEP AT TOP) --- */
-.header .outdated-notice-box {
-    background-color: #ff0000 !important; /* Force Red */
-    color: #ffffff !important;
-    padding: 25px;
-    margin-bottom: 30px;
-    border: 4px solid #b30000;
-    border-radius: 12px;
-    text-align: center;
-    display: block !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+/* --- ALERT BOX STYLES --- */
+.outdated-notice-box {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 4px solid #b30000;
+  border-radius: 12px;
+  text-align: center;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .outdated-notice-box p {
-    margin: 0 0 15px 0 !important;
-    font-size: 1.4rem !important;
-    color: #ffffff !important;
-    text-transform: uppercase;
-    font-weight: 700;
+  margin: 0 0 15px 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .outdated-notice-box .notice-link {
-    display: inline-block !important;
-    background-color: #ffffff !important;
-    color: #ff0000 !important;
-    padding: 12px 24px !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    border-radius: 5px;
-    font-size: 1.2rem;
+  display: inline-block;
+  background-color: #ffffff;
+  color: #ff0000;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.outdated-notice-box .notice-link:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
 }
 /* --- END ALERT STYLES --- */
+
 /* Print Styles */
 @media print {
   body {
     font-size: 12pt;
     line-height: 1.4;
   }
-  
+
   .container {
     max-width: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .nav-header {
     display: none !important;
   }
-  
+
   .header {
     background: none !important;
     color: var(--text-primary) !important;
@@ -103,26 +111,26 @@ body {
     border-bottom: 2px solid var(--border-color);
     padding: 20pt 0;
   }
-  
+
   .step-card {
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid var(--border-color);
     margin-bottom: 15pt;
   }
-  
+
   .wiring-diagram {
     break-inside: avoid;
   }
-  
+
   .url-link {
     word-break: break-all;
   }
-  
+
   .back-section {
     display: none !important;
   }
-  
+
   .no-print {
     display: none !important;
   }
@@ -204,7 +212,7 @@ body {
 .header {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
-  padding: 60px 0;
+  padding: 40px 0 60px;
   text-align: center;
   box-shadow: var(--shadow);
   margin-bottom: 40px;
@@ -597,41 +605,41 @@ body.dark-mode .back-card {
   .container {
     padding: 0 15px;
   }
-  
+
   .nav-header .container {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .nav-left {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .header h1 {
     font-size: 2.2rem;
   }
-  
+
   .header .subtitle {
     font-size: 1.2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .step-title {
     font-size: 1.5rem;
   }
-  
+
   .step-content {
     padding: 20px;
   }
-  
+
   .step-header {
     padding: 20px;
   }
-  
+
   .downloads-grid {
     grid-template-columns: 1fr;
   }
@@ -639,83 +647,38 @@ body.dark-mode .back-card {
 
 @media (max-width: 480px) {
   .header {
-    padding: 40px 0;
+    padding: 20px 0 40px;
   }
-  
+
   .header h1 {
     font-size: 1.8rem;
   }
-  
+
   .header .subtitle {
     font-size: 1rem;
   }
-  
+
   .step-number {
     width: 35px;
     height: 35px;
     font-size: 1rem;
   }
-  
+
   .nav-title {
     font-size: 1rem;
   }
 
-  /* Ensure the red box sits near the top of the header */
-.header .container {
-    padding-top: 0;
-}
+  .outdated-notice-box {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
 
-.header {
-    padding-top: 20px; /* Reduces the 60px gap so the notice is prominent */
-}
+  .outdated-notice-box p {
+    font-size: 1.1rem;
+  }
 
-/* Your Notice Box Styles */
-.outdated-notice-box {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 25px;
-    margin-bottom: 30px;
-    border: 4px solid #b30000;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.outdated-notice-box p {
-    margin: 0 0 15px 0;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.notice-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #ff0000;
-    padding: 12px 24px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
-}
-
-.notice-link:hover {
-    transform: scale(1.05);
-    background-color: #f0f0f0;
-}
-
-/* Mobile Tweak */
-@media (max-width: 480px) {
-    .outdated-notice-box {
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-    .outdated-notice-box p {
-        font-size: 1.1rem;
-    }
-    .notice-link {
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .outdated-notice-box .notice-link {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
