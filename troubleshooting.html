@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting - Delta Flyer Refit</title>
+    <link rel="stylesheet" href="assets/css/tutorial.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <div class="nav-header">
+      <div class="container">
+        <div class="nav-left">
+          <a href="index.html" class="back-link">← Back to Setup Guide</a>
+          <span class="nav-title">Delta Flyer Troubleshooting</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+      </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <h1>Rolohaun LDO Delta Flyer Refit</h1>
+            <div class="subtitle">Troubleshooting Guide</div>
+            <div class="author">By Kanrog Creations</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Troubleshooting Section -->
+        <section class="content-section">
+            <h2 class="section-title">Common Issues & Fixes</h2>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">⚠️</div>
+                    <div class="step-title">Fix for "Error during homing stepper_a: Communication timeout during homing"</div>
+                </div>
+                <div class="step-content">
+                    <h3>Step-by-Step Instructions</h3>
+
+                    <h4>1. Connect to Your Printer</h4>
+                    <ul>
+                        <li>On Windows, open <strong>Command Prompt</strong></li>
+                        <li>Type: <span class="inline-code">ssh biqu@PRINTER-IP</span> (replace PRINTER-IP with your actual printer IP address)</li>
+                        <li>Press <strong>ENTER</strong></li>
+                        <li>When prompted for a password, type: <span class="inline-code">biqu</span></li>
+                        <li>Press <strong>ENTER</strong></li>
+                    </ul>
+
+                    <h4>2. Open the Configuration File</h4>
+                    <ul>
+                        <li>Type: <span class="inline-code">sudo nano ./klipper/klippy/mcu.py</span></li>
+                        <li>Press <strong>ENTER</strong> to open the text editor</li>
+                    </ul>
+
+                    <h4>3. Find and Edit the Timeout Value</h4>
+                    <ul>
+                        <li>Use the <strong>Down Arrow</strong> key to scroll down</li>
+                        <li>Find the line: <span class="inline-code">TRSYNC_TIMEOUT = 0.025</span></li>
+                        <li>Change it to: <span class="inline-code">TRSYNC_TIMEOUT = 0.050</span></li>
+                    </ul>
+
+                    <h4>4. Save Your Changes</h4>
+                    <ul>
+                        <li>Press <strong>CTRL + X</strong></li>
+                        <li>Press <strong>Y</strong></li>
+                        <li>Press <strong>ENTER</strong></li>
+                    </ul>
+
+                    <h4>5. Reboot the Printer</h4>
+                    <ul>
+                        <li>Type: <span class="inline-code">sudo reboot now</span></li>
+                        <li>Press <strong>ENTER</strong></li>
+                        <li>The printer will reboot automatically</li>
+                    </ul>
+
+                    <div class="success-block">
+                        <h4>Result</h4>
+                        <p>The error should be resolved after the reboot completes.</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Credit</h4>
+                        <p>Thanks to @__esm__ on Discord for this solution!</p>
+                    </div>
+
+                    <div class="warning-block">
+                        <h4>⚠️ Update</h4>
+                        <p>This will create a "Repo is dirty." warning in the Machine tab, ignore this.</p>
+                        <p>You might have to re-do this if you update klipper.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">⚠️</div>
+                    <div class="step-title">Fix for "Motors Not Enabling After Klipper Update"</div>
+                </div>
+                <div class="step-content">
+                    <h3>What Went Wrong</h3>
+                    <p>When updating Klipper and compiling new RP2040 firmware for the BTT DZ01 using the newest Klipper source code, it can sometimes result in a broken build. The chip loses its ability to toggle the physical enable pins for the TMC2209 stepper drivers. Klipper will connect successfully, but the motors will completely refuse to move.</p>
+
+                    <div class="warning-block">
+                        <h4>The Common Trap</h4>
+                        <p>Because the BTT DZ01 is an all-in-one board, users mistakenly assume the motor enable pins are wired to the Allwinner H616 (the Linux host). Believing the H616 is the problem, they put the host into bootloader mode and attempt to flash it. <strong>Do not do this.</strong> Flashing the H616 will corrupt the operating system, break the GPIO drivers, and cause a new set of problems. The motor failure is strictly an RP2040 firmware issue.</p>
+                    </div>
+
+                    <h3>How to Fix It</h3>
+                    <p>To solve this, you need to bypass compiling the firmware yourself and flash a "known-good" backup of the RP2040 firmware.</p>
+
+                    <div class="info-block">
+                        <h4>Prerequisites</h4>
+                        <ul>
+                            <li>Download the known-good <span class="inline-code">rp2040_firmware_backup.uf2</span> file from the GitHub repository: <a href="assets/configs/rp2040_firmware_backup.uf2" class="url-link" target="_blank" rel="noopener">Download Here</a></li>
+                            <li>If you already attempted to flash the H616 processor and broke your operating system, you <strong>must</strong> flash a fresh BigTreeTech CB1 OS image to your SD card before proceeding.</li>
+                        </ul>
+                    </div>
+
+                    <h4>1. Put the RP2040 into BOOTSEL Mode</h4>
+                    <ul>
+                        <li>Turn off the main power to your printer.</li>
+                        <li>Locate the two BOOT buttons on the DZ01 motherboard. Press and hold the BOOT button dedicated to the RP2040 (Ensure it is <strong>not</strong> the one next to the <span class="inline-code">RESTE_H616</span> button).</li>
+                        <li>Turn the printer power back on while continuing to hold the BOOT button for about 3 seconds, then release it.</li>
+                        <li>Wait a minute for the Linux host to fully boot up, and SSH into your machine.</li>
+                    </ul>
+
+                    <h4>2. Mount the RP2040</h4>
+                    <ul>
+                        <li>Because the RP2040 is in BOOTSEL mode, it will show up to the Linux host as a USB storage drive.</li>
+                        <li>Type: <span class="inline-code">sudo mkdir -p /mnt/pico</span> and press <strong>ENTER</strong>.</li>
+                        <li>Type: <span class="inline-code">sudo mount /dev/sda1 /mnt/pico</span> and press <strong>ENTER</strong>. <em>(Note: Depending on your Linux setup, the device might be sdb1 or sdc1. You can run lsblk to verify).</em></li>
+                    </ul>
+
+                    <h4>3. Flash the Known-Good Firmware</h4>
+                    <ul>
+                        <li>Move the .uf2 file you downloaded onto your Linux host (via SFTP, or by dropping it in your Klipper config folder via the web interface).</li>
+                        <li>Type: <span class="inline-code">sudo cp path/to/your/rp2040_firmware_backup.uf2 /mnt/pico/</span> and press <strong>ENTER</strong>.</li>
+                        <li><em>(Be sure to replace "path/to/your/" with the actual location where you saved the file).</em></li>
+                    </ul>
+
+                    <h4>4. Reboot</h4>
+                    <ul>
+                        <li>Once the file finishes copying, the RP2040 will automatically reboot, disconnect the storage drive, and load the fresh Klipper firmware.</li>
+                        <li>Power cycle your printer one last time, and your stepper motors should now enable and function normally!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Back to Main Site -->
+        <section class="back-section">
+            <div class="back-card">
+                <h3>Return to Delta Flyer Refit</h3>
+                <p>Ready to explore more resources and configuration files?</p>
+                <a href="index.html" class="back-button">← Back to Setup Guide</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      
+      if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️ Light Mode';
+      }
+
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('theme', 'dark');
+          themeToggle.textContent = '☀️ Light Mode';
+        } else {
+          localStorage.setItem('theme', 'light');
+          themeToggle.textContent = '🌙 Dark Mode';
+        }
+      });
+    </script>
+</body>
+</html>
