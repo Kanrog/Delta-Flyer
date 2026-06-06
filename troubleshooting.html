@@ -118,10 +118,16 @@
                     </div>
 
                     <h4>1. Put the RP2040 into BOOTSEL Mode</h4>
+                    <p>To flash the RP2040, you must put it into BOOTSEL mode while keeping the Linux host running.</p>
+                    
+                    <div class="diagram-image">
+                        <img src="assets/images/button.png" alt="DZ01 Button Map: BOOT (Green) and Reset (Pink)" style="max-width: 100%; height: auto; border: 2px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+
                     <ul>
                         <li>Turn off the main power to your printer.</li>
-                        <li>Locate the two BOOT buttons on the DZ01 motherboard. Press and hold the BOOT button dedicated to the RP2040 (Ensure it is <strong>not</strong> the one next to the <span class="inline-code">RESTE_H616</span> button).</li>
-                        <li>Turn the printer power back on while continuing to hold the BOOT button for about 3 seconds, then release it.</li>
+                        <li>Locate the <strong>BOOT</strong> button (highlighted in <strong>green</strong> in the image above).</li>
+                        <li>Press and hold the BOOT button, then turn the printer power back on while continuing to hold it for about 3 seconds, then release.</li>
                         <li>Wait a minute for the Linux host to fully boot up, and SSH into your machine.</li>
                     </ul>
 
