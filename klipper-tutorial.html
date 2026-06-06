@@ -8,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
 </head>
 <body>
-    <!-- Navigation Header -->
     <div class="nav-header">
       <div class="container">
         <div class="nav-left">
@@ -28,7 +27,6 @@
     </header>
 
     <div class="container">
-        <!-- Wiring Diagram Reference -->
         <section class="wiring-diagram">
             <h3>Delta Flyer Refit - Wiring Reference</h3>
             <div class="diagram-image">
@@ -36,7 +34,6 @@
             </div>
         </section>
 
-        <!-- Section 1: Notes -->
         <section class="content-section">
             <h2 class="section-title">1. Notes</h2>
             
@@ -72,11 +69,9 @@
             </div>
         </section>
 
-        <!-- Section 2: Step-by-Step Process -->
         <section class="content-section">
             <h2 class="section-title">2. Step-by-Step Process/Content</h2>
 
-            <!-- Step 1: Download Software -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">1</div>
@@ -128,7 +123,6 @@
                 </div>
             </div>
 
-            <!-- Step 2: Burn CB1 Image -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">2</div>
@@ -194,7 +188,6 @@ WIFI_PASSWD="Your Password"
                 </div>
             </div>
 
-            <!-- Step 3: Macros -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">3</div>
@@ -206,7 +199,6 @@ WIFI_PASSWD="Your Password"
                 </div>
             </div>
 
-            <!-- Step 4: Delta Calibrate -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">4</div>
@@ -226,7 +218,6 @@ WIFI_PASSWD="Your Password"
                 </div>
             </div>
 
-            <!-- Step 5: PID -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">5</div>
@@ -238,7 +229,6 @@ WIFI_PASSWD="Your Password"
                 </div>
             </div>
 
-            <!-- Step 6: OrcaSlicer Setup -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">6</div>
@@ -257,7 +247,7 @@ WIFI_PASSWD="Your Password"
                     <p>Enable "Install Bambu Network plug-in" and press "Next". Let it install and click "close".</p>
 
                     <p>Navigate to the "Prepare" tab, press the little Wifi button next to the name of the printer, find the "Hostname" box and enter the IP used to open Mainsail in your browser, press "enter" and "Test" to make sure the connection works. Give your printer a name at the top and press "OK".</p>
-                                    
+                                        
                     <div class="success-block">
                         <h4>Connected!</h4>
                         <p>You now have access to mainsail directly in the slicer in the "Device" tab!</p>
@@ -265,7 +255,6 @@ WIFI_PASSWD="Your Password"
                 </div>
             </div>
 
-            <!-- Step 7: First Print -->
             <div class="step-card">
                 <div class="step-header">
                     <div class="step-number">7</div>
@@ -301,7 +290,6 @@ WIFI_PASSWD="Your Password"
             </div>
         </section>
 
-        <!-- Section 3: Recap & Conclusion -->
         <section class="content-section">
             <h2 class="section-title">3. Recap & Conclusion</h2>
             
@@ -313,7 +301,6 @@ WIFI_PASSWD="Your Password"
             </div>
         </section>
         
-        <!-- Section 4: Troubleshooting -->
         <section class="content-section">
             <h2 class="section-title">4. Troubleshooting</h2>
 
@@ -379,9 +366,63 @@ WIFI_PASSWD="Your Password"
                     
                 </div>
             </div>
-        </section>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">⚠️</div>
+                    <div class="step-title">Fix for "Motors Not Enabling After Klipper Update"</div>
+                </div>
+                <div class="step-content">
+                    <h3>What Went Wrong</h3>
+                    <p>When updating Klipper and compiling new RP2040 firmware for the BTT DZ01 using the newest Klipper source code, it can sometimes result in a broken build. The chip loses its ability to toggle the physical enable pins for the TMC2209 stepper drivers. Klipper will connect successfully, but the motors will completely refuse to move.</p>
+
+                    <div class="warning-block">
+                        <h4>The Common Trap</h4>
+                        <p>Because the BTT DZ01 is an all-in-one board, users mistakenly assume the motor enable pins are wired to the Allwinner H616 (the Linux host). Believing the H616 is the problem, they put the host into bootloader mode and attempt to flash it. <strong>Do not do this.</strong> Flashing the H616 will corrupt the operating system, break the GPIO drivers, and cause a new set of problems. The motor failure is strictly an RP2040 firmware issue.</p>
+                    </div>
+
+                    <h3>How to Fix It</h3>
+                    <p>To solve this, you need to bypass compiling the firmware yourself and flash a "known-good" backup of the RP2040 firmware.</p>
+
+                    <div class="info-block">
+                        <h4>Prerequisites</h4>
+                        <ul>
+                            <li>Download the known-good <span class="inline-code">rp2040_firmware_backup.uf2</span> file from the GitHub repository: <a href="[Insert Your GitHub Link Here]" class="url-link" target="_blank" rel="noopener">Download Here</a></li>
+                            <li>If you already attempted to flash the H616 processor and broke your operating system, you <strong>must</strong> flash a fresh BigTreeTech CB1 OS image to your SD card before proceeding.</li>
+                        </ul>
+                    </div>
+
+                    <h4>1. Put the RP2040 into BOOTSEL Mode</h4>
+                    <ul>
+                        <li>Turn off the main power to your printer.</li>
+                        <li>Locate the two BOOT buttons on the DZ01 motherboard. Press and hold the BOOT button dedicated to the RP2040 (Ensure it is <strong>not</strong> the one next to the <span class="inline-code">RESTE_H616</span> button).</li>
+                        <li>Turn the printer power back on while continuing to hold the BOOT button for about 3 seconds, then release it.</li>
+                        <li>Wait a minute for the Linux host to fully boot up, and SSH into your machine.</li>
+                    </ul>
+
+                    <h4>2. Mount the RP2040</h4>
+                    <ul>
+                        <li>Because the RP2040 is in BOOTSEL mode, it will show up to the Linux host as a USB storage drive.</li>
+                        <li>Type: <span class="inline-code">sudo mkdir -p /mnt/pico</span> and press <strong>ENTER</strong>.</li>
+                        <li>Type: <span class="inline-code">sudo mount /dev/sda1 /mnt/pico</span> and press <strong>ENTER</strong>. <em>(Note: Depending on your Linux setup, the device might be sdb1 or sdc1. You can run lsblk to verify).</em></li>
+                    </ul>
+
+                    <h4>3. Flash the Known-Good Firmware</h4>
+                    <ul>
+                        <li>Move the .uf2 file you downloaded onto your Linux host (via SFTP, or by dropping it in your Klipper config folder via the web interface).</li>
+                        <li>Type: <span class="inline-code">sudo cp path/to/your/rp2040_firmware_backup.uf2 /mnt/pico/</span> and press <strong>ENTER</strong>.</li>
+                        <li><em>(Be sure to replace "path/to/your/" with the actual location where you saved the file).</em></li>
+                    </ul>
+
+                    <h4>4. Reboot</h4>
+                    <ul>
+                        <li>Once the file finishes copying, the RP2040 will automatically reboot, disconnect the storage drive, and load the fresh Klipper firmware.</li>
+                        <li>Power cycle your printer one last time, and your stepper motors should now enable and function normally!</li>
+                    </ul>
+                </div>
+            </div>
+            </section>
         
-        <!-- Back to Main Site -->
         <section class="back-section">
             <div class="back-card">
                 <h3>Return to Delta Flyer Refit</h3>
